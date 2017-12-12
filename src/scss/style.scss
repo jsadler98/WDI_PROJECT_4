@@ -10,18 +10,8 @@ a {
   color: black;
 
   &:hover, &:focus {
-    color: inherit;
+    color: pink;
     text-decoration: none;
     outline: none;
   }
-}
-
-.fa-gamepad {
-  position: relative;
-  top: -5px;
-  left: 5%;
-  transform: translate(-50%, 0);
-  font-size: 10px;
-  color: #black;
-  padding: 0 30px;
 }

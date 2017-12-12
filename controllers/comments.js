@@ -1,7 +1,7 @@
 const Comment = require('../models/comment');
 
 function createCommentRoute(req, res, next) {
-  console.log(req.user);
+  // console.log(req.user);
   req.body.createdBy = req.user.userId;
 
   Comment.create(req.body)
@@ -12,9 +12,9 @@ function createCommentRoute(req, res, next) {
 }
 
 function commentIndex(req, res, next) {
-  Comment.find({ venueId: req.params.id })
-    .populate('createdBy')
+  Comment.find({ comment: req.params.id })
     .exec()
+    .populate('createdBy')
     .then(comments => {
       return res.status(200).json(comments);
     })

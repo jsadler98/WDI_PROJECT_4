@@ -1,10 +1,13 @@
 const Game = require('../models/game');
+// const User = require('../models/user');
+
 
 function gamesIndex(req, res, next) {
   Game
     .find()
+    .populate('createdBy')
     .exec()
-    .then(game => res.json(game))
+    .then(games => res.json(games))
     .catch(next);
 }
 
@@ -21,6 +24,7 @@ function gamesCreate(req, res, next) {
 function gamesShow(req, res, next) {
   Game
     .findById(req.params.id)
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((game) => {
       if(!game) return res.notFound();
@@ -57,10 +61,57 @@ function gamesDelete(req, res, next) {
     .catch(next);
 }
 
+function gamesCommentCreate(req, res, next) {
+  req.body.createdBy = req.currentUser;
+  Game
+    .findById(req.params.id)
+    .exec()
+    .then((game) => {
+      if(!game) return res.notFound();
+      const comment = game.comments.create(req.body);
+      game.comments.push(comment);
+      return game.save();
+    })
+    .then(game => Game.populate(game, { path: 'createdBy comments.createdBy' }))
+    .then(game => res.status(201).json(game))
+    .catch(next);
+}
+
+function gamesUpvoteCreate(req, res, next) {
+  Game
+    .findById(req.params.id)
+    .exec()
+    .then((game) => {
+      if(!game) return res.notFound();
+      game.upvotes.addToSet(this.currentUser._id);
+
+      return game.save();
+    })
+    .then(game =>  res.json(game))
+    .catch(next);
+}
+
+function gamesCommentDelete(req, res, next) {
+  Game
+    .findById(req.params.id)
+    .exec()
+    .then((game) => {
+      if(!game) return res.notFound();
+      const comment = game.comments.find(comment => comment.id === req.params.commentId);
+      comment.remove();
+      return game.save();
+    })
+    .then(() => res.status(204))
+    .catch(next);
+}
+
 module.exports = {
   index: gamesIndex,
   create: gamesCreate,
   show: gamesShow,
   update: gamesUpdate,
-  delete: gamesDelete
+  delete: gamesDelete,
+  commentCreate: gamesCommentCreate,
+  upvoteCreate: gamesUpvoteCreate,
+  commentDelete: gamesCommentDelete
 };

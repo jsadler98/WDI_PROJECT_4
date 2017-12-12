@@ -9,7 +9,8 @@ const imageStyle = {
   width: '100%',
   borderRadius: '2px',
   padding: '4px',
-  background: 'white'
+  background: 'white',
+  borderColor: 'green'
 };
 
 class GamesIndex extends React.Component {
@@ -29,11 +30,11 @@ class GamesIndex extends React.Component {
       <div>
         <div className="row">
           <div className="page-banner col-md-12">
-            { Auth.isAuthenticated() && <button className="main-button">
+            { Auth.isAuthenticated() && <a className="main-button">
               <Link to="/games/new">
                 Add Game
               </Link>
-            </button>}
+            </a>}
             <br></br>
             <br></br>
           </div>

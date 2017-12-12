@@ -3,6 +3,16 @@ import { Link, withRouter } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
 
+const gamePadStyle = {
+  position: 'relative',
+  top: '-5px',
+  left: '5%',
+  transform: 'translate(-50%, 0)',
+  fontSize: '40px',
+  color: '#black',
+  padding: '0 90px'
+};
+
 const Navbar = ({ history }) => {
 
   function logout(e) {
@@ -16,7 +26,7 @@ const Navbar = ({ history }) => {
     <nav>
       <div className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
-          <h1><Link to="/games">Gametastic</Link><i className="fa fa-gamepad" aria-hidden="true"></i></h1>
+          <h1><Link to="/games">Gametastic<i style={gamePadStyle} className="fa fa-gamepad" aria-hidden="true"></i></Link></h1>
         </ul>
       </div>
       <div className="navbar-collapse collapse">

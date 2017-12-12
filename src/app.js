@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import 'bootstrap-css-only';
 import './scss/style.scss';
+import 'font-awesome/css/font-awesome.css';
 
 import Navbar from './components/utility/Navbar';
 import Routes from './components/utility/Routes';
@@ -15,11 +16,9 @@ class App extends React.Component {
       <Router>
         <div className="container">
           <header>
-            <h1><Link to="/games">Gametastic</Link></h1>
             <nav>
               <Navbar />
             </nav>
-            <h1></h1>
           </header>
           <main>
             <Routes />

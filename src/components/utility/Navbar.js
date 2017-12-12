@@ -12,20 +12,28 @@ const Navbar = ({ history }) => {
     history.push('/games');
   }
 
-
   return(
-    <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-      <a className="main-button">
-        { !Auth.isAuthenticated() &&  <Link to="/login" className="standard-button">Login</Link>}
-      </a>
-      {' '}
-      <a className="main-button">
-        { !Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
-      </a>
-      {' '}
-      <a className="main-button">
-        { Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
-      </a>
+    <nav>
+      <div className="navbar-collapse collapse">
+        <ul className="nav navbar-nav navbar-left">
+          <h1><Link to="/games">Gametastic</Link><i className="fa fa-gamepad" aria-hidden="true"></i></h1>
+        </ul>
+      </div>
+      <div className="navbar-collapse collapse">
+        <ul className="nav navbar-right">
+          <a className="main-button">
+            { !Auth.isAuthenticated() &&  <Link to="/login" className="standard-button">Login</Link>}
+          </a>
+          {' '}
+          <a className="main-button">
+            { !Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
+          </a>
+          {' '}
+          <a className="main-button">
+            { Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
+          </a>
+        </ul>
+      </div>
     </nav>
   );
 };

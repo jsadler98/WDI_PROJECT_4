@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
 
+const tileStyle = {
+  height: '500px'
+};
+
 class GamesShow extends React.Component {
 
   state = {
@@ -29,8 +33,8 @@ class GamesShow extends React.Component {
       <div className="row">
         <div className="page-banner col-md-12">
         </div>
-        <div className="image-tile col-md-6">
-          <img src={this.state.game.image} className="img-responsive" />
+        <div className="image col-md-6">
+          <img style={tileStyle}  src={this.state.game.image} className="img-responsive" />
         </div>
         <div className="col-md-6">
           <h3>{ this.state.game.name }</h3>

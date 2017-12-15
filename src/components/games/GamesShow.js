@@ -4,10 +4,22 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
 import CommentsForm from './CommentsForm';
+import Video from '../utility/Video';
 
 const tileStyle = {
   height: '500px'
 };
+
+const editButtonStyle = {
+  backgroundColor: '#A9DEF9',
+  borderColor: '#A9DEF9'
+};
+
+const deleteButtonStyle = {
+  backgroundColor: '#F08A92',
+  borderColor: '#F08A92'
+};
+
 
 class GamesShow extends React.Component {
 
@@ -15,18 +27,35 @@ class GamesShow extends React.Component {
 
     game: {},
 
+    videos: [],
+
     newComment: {
-      body: ''
+      body: '',
+      rating: ''
     }
 
   }
 
   componentDidMount() {
+
     Axios
       .get(`/api/games/${this.props.match.params.id}`)
-      .then( res => {
-        console.log(res.data);
-        this.setState({ game: res.data });
+      .then( gameRes => {
+        return Axios
+          .get('https://www.googleapis.com/youtube/v3/search', {
+            params: {
+              q: gameRes.data.name,
+              part: 'snippet',
+              maxResults: 5,
+              videoCategoryId: 20,
+              key: 'AIzaSyD0A_FNlw-7B7MF8vEyi6LWR5GqNDHs1gc',
+              type: 'video'
+            }
+          })
+          .then(videoRes => {
+            const videos = videoRes.data.items.map(video => video.id.videoId);
+            this.setState({ game: gameRes.data, videos: videos }, () => console.log(this.state));
+          });
       })
       .catch(err => console.log(err));
   }
@@ -38,12 +67,6 @@ class GamesShow extends React.Component {
       .catch(err => console.log(err));
   }
 
-  deleteComment = () => {
-    Axios
-      .delete(`/api/games/${this.props.match.params.id}/{}`)
-      .then(() => this.props.history.push(`/games/${this.props.match.params.id}`))
-      .catch(err => console.log(err));
-  }
 
   handleCommentSubmit = (e) => {
     e.preventDefault();
@@ -53,7 +76,7 @@ class GamesShow extends React.Component {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       .then(res => {
-        const newComment = Object.assign({}, this.state.newComment, { body: '' });
+        const newComment = Object.assign({}, this.state.newComment, { body: '', rating: ''});
         this.setState({ game: res.data, newComment });
       })
       .catch(err => console.log(err));
@@ -66,38 +89,48 @@ class GamesShow extends React.Component {
 
   render() {
     return(
-      <div className="row">
-        <div className="page-banner col-md-12">
-        </div>
+      <div>
         <div className="image col-md-6">
           <img style={tileStyle}  src={this.state.game.image} className="img-responsive" />
+          <br></br>
+          {this.state.videos.map(videoId => <Video key={videoId} videoId={videoId} />)}
         </div>
         <div className="col-md-6">
-          <h3>{ this.state.game.name }</h3>
-          <h4>{ this.state.game.developers}</h4>
-          <h4>{ this.state.game.designers}</h4>
-          <h4>{ this.state.game.description}</h4>
-          <h4>{ this.state.game.releaseYear}</h4>
+          <h1>{ this.state.game.name }</h1>
+          <br></br>
+          <h4>Developers: { this.state.game.developers}</h4>
+          <br></br>
+          <h4>Designer(s): { this.state.game.designers}</h4>
+          <br></br>
+          <h4>Description: { this.state.game.description}</h4>
+          <br></br>
+          <h4>Release Year: { this.state.game.releaseYear}</h4>
           { Auth.isAuthenticated() &&<a className="standard-button" onClick={this.deleteGame}>
-           Delete
+            <button style={deleteButtonStyle}> Delete </button>
           </a>}
           {' '}
           { Auth.isAuthenticated() && <Link to={`/games/${this.state.game.id}/edit`} className="standard-button">
-        Edit
+            <button style={editButtonStyle}>  Edit  </button>
           </Link>}
+        </div>
+        <br></br>
+        <br></br>
+        <div  className="col-md-6">
+          <h1>Comments</h1>
           {this.state.game.comments && this.state.game.comments.map(comment =>
             <div key={comment.id}>
-              <h4>{comment.body}</h4>
-              <h2>{comment.createdBy.username}</h2>
-              <h2>{comment.rating}</h2>
+              <h3>{comment.body}</h3>
+              <h4>Rating: {comment.rating}</h4>
+              <light>User: {comment.createdBy.username}</light>
             </div>
           )}
+          { Auth.isAuthenticated() && <h1>Leave a comment</h1>}
+          { Auth.isAuthenticated() &&  <CommentsForm
+            newComment={this.state.newComment}
+            handleCommentSubmit={this.handleCommentSubmit}
+            handleCommentChange={this.handleCommentChange}
+          />}
         </div>
-        <CommentsForm
-          newComment={this.state.newComment}
-          handleCommentSubmit={this.handleCommentSubmit}
-          handleCommentChange={this.handleCommentChange}
-        />
       </div>
     );
   }

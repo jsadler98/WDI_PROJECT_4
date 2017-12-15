@@ -5,6 +5,15 @@ h1 {
   font-family: 'Press Start 2P', cursive;
 }
 
+h2, h3, h4 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 15px ;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -14,4 +23,20 @@ a {
     text-decoration: none;
     outline: none;
   }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+.homeBackground {
+  background-image: url(https://i0.wp.com/i44.tinypic.com/sm7n8y.gif?resize=303%2C227);
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }

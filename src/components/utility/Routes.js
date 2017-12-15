@@ -8,6 +8,7 @@ import GamesIndex from '../games/GamesIndex';
 import GamesShow  from  '../games/GamesShow';
 import GamesNew   from '../games/GamesNew';
 import GamesEdit  from '../games/GamesEdit';
+import LandingPage  from '../games/LandingPage';
 
 import ProtectedRoute from './ProtectedRoutes';
 
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route exact path="/games" component={GamesIndex} />
       <ProtectedRoute path="/games/:id/edit" component={GamesEdit} />
       <Route path="/games/:id" component={GamesShow} />
+      <Route path="/" component={LandingPage} />
     </Switch>
   );
 };

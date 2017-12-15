@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const games = require('../controllers/games');
 const auth  = require('../controllers/auth');
-// const comments = require('../controllers/comments');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/games')
@@ -21,9 +20,6 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
-
-// router.route('/games/:id/comments/:commentId')
-//   .delete(comments.delete);
 
 router.all('/*', (req, res) =>
   res.notFound());

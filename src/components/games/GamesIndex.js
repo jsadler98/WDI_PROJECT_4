@@ -32,7 +32,7 @@ class GamesIndex extends React.Component {
           <div className="page-banner col-md-12">
             { Auth.isAuthenticated() && <a className="main-button">
               <Link to="/games/new">
-                Add Game
+                <button>  Add Game </button>
               </Link>
             </a>}
             <br></br>

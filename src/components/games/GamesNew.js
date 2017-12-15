@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 
 import GamesForm from './GamesForm';
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
 
 class GamesNew extends React.Component {
   constructor() {

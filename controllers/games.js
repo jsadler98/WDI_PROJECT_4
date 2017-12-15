@@ -91,19 +91,6 @@ function gamesUpvoteCreate(req, res, next) {
     .catch(next);
 }
 
-function gamesCommentDelete(req, res, next) {
-  Game
-    .findById(req.params.id)
-    .exec()
-    .then((game) => {
-      if(!game) return res.notFound();
-      const comment = game.comments.find(comment => comment.id === req.params.commentId);
-      comment.remove();
-      return game.save();
-    })
-    .then(() => res.status(204))
-    .catch(next);
-}
 
 module.exports = {
   index: gamesIndex,
@@ -112,6 +99,5 @@ module.exports = {
   update: gamesUpdate,
   delete: gamesDelete,
   commentCreate: gamesCommentCreate,
-  upvoteCreate: gamesUpvoteCreate,
-  commentDelete: gamesCommentDelete
+  upvoteCreate: gamesUpvoteCreate
 };

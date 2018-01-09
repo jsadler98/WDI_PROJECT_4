@@ -14,6 +14,7 @@ function gamesIndex(req, res, next) {
 function gamesCreate(req, res, next) {
 
   if(req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.currentUser;
 
   Game
     .create(req.body)

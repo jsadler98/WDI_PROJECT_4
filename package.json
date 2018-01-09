@@ -7,7 +7,6 @@
   "scripts": {
     "start": "yarn build && node index",
     "start:client": "webpack-dev-server",
-    "start:server": "nodemon",
     "build": "webpack -p",
     "seed": "node db/seeds",
     "test:client": "node_modules/.bin/_mocha test/client/helper \"test/client/**/*_test.js\"",

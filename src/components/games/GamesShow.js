@@ -46,7 +46,7 @@ class GamesShow extends React.Component {
             params: {
               q: gameRes.data.name,
               part: 'snippet',
-              maxResults: 5,
+              maxResults: 3,
               videoCategoryId: 20,
               key: 'AIzaSyD0A_FNlw-7B7MF8vEyi6LWR5GqNDHs1gc',
               type: 'video'
@@ -93,6 +93,7 @@ class GamesShow extends React.Component {
         <div className="image col-md-6">
           <img style={tileStyle}  src={this.state.game.image} className="img-responsive" />
           <br></br>
+          <h1> Cool Videos </h1>
           {this.state.videos.map(videoId => <Video key={videoId} videoId={videoId} />)}
         </div>
         <div className="col-md-6">

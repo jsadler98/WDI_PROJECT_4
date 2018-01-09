@@ -26,7 +26,7 @@ const Navbar = ({ history }) => {
     <nav>
       <div className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-left">
-          <h1><Link to="/games">Gametastic<i style={gamePadStyle} className="fa fa-gamepad" aria-hidden="true"></i></Link></h1>
+          <h1><Link to="/">Gametastic<i style={gamePadStyle} className="fa fa-gamepad" aria-hidden="true"></i></Link></h1>
         </ul>
       </div>
       <div className="navbar-collapse collapse">

@@ -66,6 +66,76 @@ User
         designers: 'Allan Alcorn',
         description: 'Pong is one of the earliest arcade video games. It is a table tennis sports game  featuring simple two-dimensional graphics.',
         releaseYear: '1972'
+      },{
+        name: 'Pokemon Blue',
+        image: 'https://i.pinimg.com/736x/84/9c/2c/849c2cbebc20f43a8362b03b1f936a97--pokemon-nintendo-poster-designs.jpg',
+        developers: 'Game Freak',
+        designers: 'Satoshi Tajiri, Ken Sugimori',
+        description: 'Are you a good trainer? Find out as you try to capture and train pocket monsters, otherwise known as Pokemon. As Ash Ketchum, youll pursue a variety of different monsters.',
+        releaseYear: '1996'
+      },{
+        name: 'Joust',
+        image: 'https://static.giantbomb.com/uploads/original/9/93770/2365976-a7800_joust.jpg',
+        developers: 'WMS Industries, Atari, Williams Entertainment Inc., HAL Laboratory',
+        designers: 'John Newcomer',
+        description: 'Players will use a button and joystick to control a knight riding a flying ostrich. The point of the game is to progress through levels by defeating groups of enemy knights riding buzzards.',
+        releaseYear: '1982'
+      },{
+        name: 'Tetris',
+        image: 'https://static.giantbomb.com/uploads/original/9/93770/2362305-nes_tengentetrisunlicenced.jpg',
+        developers: 'Sega, Philips, Ubisoft, Spectrum HoloByte, EA Mobile,',
+        designers: 'Alexey Pajitnov, Vladimir Pokhilko',
+        description: 'Tetris is a tile-matching puzzle video game that has literally been played by everybody for years and years.',
+        releaseYear: '1984'
+      },{
+        name: 'Super Mario Bros',
+        image: 'https://vignette.wikia.nocookie.net/mario/images/6/60/SMBBoxart.png/revision/latest?cb=20120609143443',
+        developers: 'Sega, Philips, Ubisoft, Spectrum HoloByte, EA Mobile,',
+        designers: 'Alexey Pajitnov, Vladimir Pokhilko',
+        description: 'Super Marios Bros is a platform objective based video game where you must save princess Peach by grinding through loads of dificult levels and worlds and defeating multiple bady guys and villains',
+        releaseYear: '1984'
+      },{
+        name: 'Doom',
+        image: 'https://vignette2.wikia.nocookie.net/doom/images/8/85/Doom.jpg/revision/latest?cb=20080913150951',
+        developers: 'Vicarious Visions, GT Interactive, id Software',
+        designers: ' John Romero, Tom Hall, id Software, American McGee, Tim Willits, Sandy Petersen, Shawn Green',
+        description: 'Doom, a science fiction/horror themed video game, the story is advanced with short messages displayed between each section of the game (called episodes), the action as the player character progresses through the levels, and some visual cues.',
+        releaseYear: '1993'
+      },{
+        name: 'Q*bert',
+        image: 'https://static.giantbomb.com/uploads/scale_small/9/93770/2367804-a2600_qbert_none.jpg',
+        developers: ' Atari, Gottlieb, Parker Brothers, Hasbro Interactive',
+        designers: 'Warren Davis, Jeff Lee',
+        description: 'The game is played using a single, diagonally mounted four-way joystick. The player controls Q*bert, who starts each game at the top of a pyramid made of 28 cubes, and moves by hopping diagonally from cube to cube. Landing on a cube causes it to change color, and changing every cube to the target color allows the player to progress to the next stage.',
+        releaseYear: '1982'
+      },{
+        name: 'Super Breakout',
+        image: 'https://i.pinimg.com/736x/9a/35/9f/9a359fb684be319bba30b9fba9dcf3b0--super-breakout-breakout-game.jpg',
+        developers: ' Atari, Atari, Inc.',
+        designers: ' Steve Wozniak, Nolan Bushnell',
+        description: 'In the game, a layer of bricks lines the top third of the screen. A ball travels across the screen, bouncing off the top and side walls of the screen. When a brick is hit, the ball bounces away and the brick is destroyed. The player loses a turn when the ball touches the bottom of the screen.',
+        releaseYear: '1976'
+      },{
+        name: 'The Legend of Zelda',
+        image: 'https://s-media-cache-ak0.pinimg.com/originals/b9/7d/3c/b97d3ca2e10ba0264a4cc493a062dbf0.jpg',
+        developers: ' Nintendo Co., Ltd., Nintendo Entertainment Analysis & Development',
+        designers: 'Shigeru Miyamoto, Takashi Tezuka',
+        description: 'The Legend of Zelda incorporates elements of action, adventure, and role-playing games. The player controls Link from a flip-screen overhead perspective as he travels in the overworld.',
+        releaseYear: '1986'
+      }, {
+        name: 'Sonic the Hedgehog',
+        image: 'https://vignette.wikia.nocookie.net/sonic/images/b/b1/Sonic-the-Hedgehog-Cover.png/revision/latest?cb=20170801064505',
+        developers: 'Sega, Sonic Team, Backbone Entertainment',
+        designers: ' Yuji Naka, Hirokazu Yasuhara, Naoto Ohshima, Rieko Kodama',
+        description: 'The player controls Sonic, who aims to halt Robotniks plans by freeing his animal friends and collecting the emeralds himself.',
+        releaseYear: '1991'
+      },{
+        name: 'Metal Slug',
+        image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNjk3OGNhN2EtODUzYS00YTkxLThjNTgtOGNjZGRmMDk4NWQ3XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_.jpg',
+        developers: 'SNK, Nazca Corporation, Terminal Reality, Noise Factory, Mega Enterprise, BrezzaSoft, Ukiyotei',
+        designers: ' Meeher',
+        description: 'Metal Slug is a series primarily of run and gun video games created by SNK. Spin-off games include a third-person shooter and a tower defense game. ',
+        releaseYear: '1996'
       }
     ]);
   })

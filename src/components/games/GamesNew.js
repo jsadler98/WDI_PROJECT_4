@@ -32,7 +32,7 @@ handleSubmit = (e) => {
 
   Axios
     .post('/api/games', this.state.game)
-    .then(() => this.props.history.push('/games'))
+    .then(() => this.props.history.push('/'))
     .catch(err => console.log(err));
 }
 

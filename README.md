@@ -61,7 +61,7 @@ This code is the Axios request to the youtube API, the 'q' is telling it to find
 
 ## Challenges
 
-My biggest hurdle on this project was probably the Youtube API as it was something I had never touched before and something that was completely new to me, the axios request was difficult to structure but after reading the Youtube documentation I got the hang of it. I enjoyed the challenge it offered and it helped me to understand that reading documentation is crucial as it can be the difference between code working or code throwing back errors. In my spare time I would love to work on the styling a bit more as there are a few things that need cleaning up like the forms and little features, styling was challenging as I didn't have enough time as I would of like to because I got tunnel visioned working on the apps functionality and purpose.
+My biggest hurdle on this project was probably the Youtube API as it was something I had never touched before and something that was completely new to me, the axios request was difficult to structure but after reading the Youtube documentation I got the hang of it. I enjoyed the challenge it offered and it helped me to understand that reading documentation is crucial as it can be the difference between code working or code throwing back errors. In my spare time I would love to work on the styling a bit more as there are a few things that need cleaning up like the forms and little features(buttons etc), styling was challenging as I didn't have enough time as I would of liked to because I got tunnel visioned working on the apps functionality and purpose.
 
 ## Conclusion
 

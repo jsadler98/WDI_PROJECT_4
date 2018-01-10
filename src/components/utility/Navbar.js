@@ -19,7 +19,7 @@ const Navbar = ({ history }) => {
     e.preventDefault();
 
     Auth.removeToken();
-    history.push('/games');
+    history.push('/');
   }
 
   return(

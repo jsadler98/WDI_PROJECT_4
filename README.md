@@ -6,7 +6,7 @@ Gametastic was the app I created for project 4 during the Web Development Immers
 
 ## The Idea
 
-I wanted to create a MERN Stack app that would help bring together the gaming community and also help to get more people into gaming. I also wanted to do a MERN stack app on games because its something I am very interested in and because I am very interested in games I was always excited to work on the app and therfor really enjoyed working with React. I took some influence off Redit as I wanted all of the users to broadcast their certain opinions on certain games and I also gave the users the option to vote the games out of 5. It as simple as registering, logging in and then posting a game.
+I wanted to create a MERN Stack app that would help bring together the gaming community and also help to get more people into gaming. I also wanted to do a MERN stack app on games because its something I am very interested in and because I am very interested in games I was always excited to work on the app and therfor really enjoyed working with React. I took some influence off Redit as I wanted all of the users to broadcast their certain opinions on certain games and I also gave the users the option to vote the games out of 5. It as simple as registering, logging in and then posting a game, I wanted to make the site very simple and basic like the old school video game machines.
 
 ## App Link
 

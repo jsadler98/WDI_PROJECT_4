@@ -52,6 +52,8 @@ const GamesForm = ({handleSubmit, handleChange, game}) => {
           value={game.description}
           onChange={handleChange} required />
       </div>
+      <br></br>
+      <br></br>
       <div className="col-md-6 mb-3">
         <label htmlFor="releaseYear">Release Year</label>
         <input type="number"
@@ -61,8 +63,7 @@ const GamesForm = ({handleSubmit, handleChange, game}) => {
           value={game.releaseYear}
           onChange={handleChange} required />
       </div>
-      <br></br>
-      <br></br>
+
       <div>
         <button className="save-button">Save</button>
       </div>

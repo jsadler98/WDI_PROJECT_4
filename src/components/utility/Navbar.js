@@ -39,9 +39,9 @@ const Navbar = ({ history }) => {
             { !Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
           </button>
           {' '}
-          <button className="main-button">
+          <a className="main-button">
             { Auth.isAuthenticated() && <button href="#" className="standard-button" onClick={logout}>Logout</button>}
-          </button>
+          </a>
         </ul>
       </div>
     </nav>

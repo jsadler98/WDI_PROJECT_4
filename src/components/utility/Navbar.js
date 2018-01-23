@@ -31,17 +31,17 @@ const Navbar = ({ history }) => {
       </div>
       <div className="navbar-collapse collapse">
         <ul className="nav navbar-right">
-          <a className="main-button">
+          <button className="main-button">
             { !Auth.isAuthenticated() &&  <Link to="/login" className="standard-button">Login</Link>}
-          </a>
+          </button>
           {' '}
-          <a className="main-button">
+          <button className="main-button">
             { !Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
-          </a>
+          </button>
           {' '}
-          <a className="main-button">
+          <button className="main-button">
             { Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
-          </a>
+          </button>
         </ul>
       </div>
     </nav>

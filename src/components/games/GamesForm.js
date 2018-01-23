@@ -62,6 +62,7 @@ const GamesForm = ({handleSubmit, handleChange, game}) => {
           onChange={handleChange} required />
       </div>
       <br></br>
+      <br></br>
       <div>
         <button className="save-button">Save</button>
       </div>

@@ -32,15 +32,15 @@ const Navbar = ({ history }) => {
       <div className="navbar-collapse collapse">
         <ul className="nav navbar-right">
           <a>
-            { !Auth.isAuthenticated() &&  <button to="/login" className="standard-button">Login</button>}
+            { !Auth.isAuthenticated() &&  <a to="/login" className="standard-button">Login</a>}
           </a>
           {' '}
           <a>
-            { !Auth.isAuthenticated() && <button to="/register" className="standard-button">Register</button>}
+            { !Auth.isAuthenticated() && <a to="/register" className="standard-button">Register</a>}
           </a>
           {' '}
           <a>
-            { Auth.isAuthenticated() && <button href="#" className="standard-button" onClick={logout}>Logout</button>}
+            { Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
           </a>
         </ul>
       </div>

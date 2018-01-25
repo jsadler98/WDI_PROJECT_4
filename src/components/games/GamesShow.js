@@ -106,9 +106,9 @@ class GamesShow extends React.Component {
           <h4>Description: { this.state.game.description}</h4>
           <br></br>
           <h4>Release Year: { this.state.game.releaseYear}</h4>
-          { Auth.isAuthenticated() &&<a className="standard-button" onClick={this.deleteGame}>
+          <a className="standard-button" onClick={this.deleteGame}>
             <button style={deleteButtonStyle}> Delete </button>
-          </a>}
+          </a>
           {' '}
           { Auth.isAuthenticated() && <Link to={`/games/${this.state.game.id}/edit`} className="standard-button">
             <button style={editButtonStyle}>  Edit  </button>

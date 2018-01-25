@@ -67,3 +67,6 @@ My biggest hurdle on this project was probably the Youtube API as it was somethi
 
 This was a great project for me as I really enjoyed using React for the first time to create a MERN stack app, it was great to explore the React libary and documentation to construct my Gametastic app and was also great to practise what I had already studied. I think if you look at how much I have progressed from project 1 to now its amazing, but it took alot of hard work and the hard work will continue.
 
+## Currently
+
+Working on improvements and trying to fix the buttons so I can get authentication back up and running.
